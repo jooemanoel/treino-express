@@ -11,3 +11,11 @@ export const inserir = async ({ nome, senha }) => {
     RETURNING id_usuario, nome`;
   return usuario;
 };
+
+export const apagarPorId = async (id_usuario) => {
+  const [usuarioDeletado] = await sql`
+    DELETE FROM usuarios
+    WHERE id_usuario = ${id_usuario}
+    RETURNING id_usuario, nome`;
+  return usuarioDeletado; // pode ser undefined se não existir
+};

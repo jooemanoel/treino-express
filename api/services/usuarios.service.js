@@ -10,3 +10,13 @@ export const criar = ({ nome, senha }) => {
   }
   return usuariosDAO.inserir({ nome, senha });
 };
+
+export const deletarPorId = async (id_usuario) => {
+  const usuarioDeletado = await usuariosDAO.apagarPorId(id_usuario);
+  if (!usuarioDeletado) {
+    const error = new Error('Usuário não encontrado');
+    error.status = 404;
+    throw error;
+  }
+  return usuarioDeletado;
+};

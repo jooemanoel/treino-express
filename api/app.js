@@ -1,3 +1,5 @@
+// api/app.js
+
 import 'dotenv/config';
 import express from 'express';
 import usuariosRoutes from './routes/usuarios.routes.js';
@@ -21,7 +23,7 @@ app.get('/', (req, res) => {
   `);
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
