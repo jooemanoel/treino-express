@@ -5,7 +5,7 @@ import * as notificacoesController from '../controllers/notificacoes.controller.
 
 const router = express.Router();
 
-router.post('/inscrever', notificacoesController.inscrever);
-router.post('/enviar', notificacoesController.enviarNotificacoes);
+router.post('/subscrever', notificacoesController.inscrever);
+router.post('/notificar', notificacoesController.enviarNotificacoes);
 
 export default router;
