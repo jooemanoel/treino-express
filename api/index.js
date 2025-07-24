@@ -3,7 +3,6 @@
 import 'dotenv/config'
 import express from 'express'
 import usuariosRoutes from './routes/usuarios.routes.js'
-
 import notificacoesRoutes from './routes/notificacoes.routes.js';
 
 const app = express()
