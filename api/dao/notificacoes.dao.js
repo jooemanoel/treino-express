@@ -1,3 +1,5 @@
+// api/dao/notificacoes.dao.js
+
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 

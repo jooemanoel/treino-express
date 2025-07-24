@@ -1,3 +1,5 @@
+//api/controllers/notificacoes.controller.js
+
 import * as notificacoesService from '../services/notificacoes.service.js';
 
 export const inscrever = async (req, res) => {

@@ -4,10 +4,11 @@ import 'dotenv/config';
 import express from 'express';
 import usuariosRoutes from './routes/usuarios.routes.js';
 import notificacoesRoutes from './routes/notificacoes.routes.js';
+import cors from 'cors';
 
-const app = express();
-
+const app = express()
 app.use(express.json())
+app.use(cors());
 app.use('/usuarios', usuariosRoutes)
 app.use('/notificacoes', notificacoesRoutes)
 app.get('/', (req, res) => {

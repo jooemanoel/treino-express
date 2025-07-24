@@ -1,3 +1,5 @@
+// api/routes/notificacoes.routes.js
+
 import express from 'express';
 import * as notificacoesController from '../controllers/notificacoes.controller.js';
 
