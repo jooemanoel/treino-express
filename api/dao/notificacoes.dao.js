@@ -1,7 +1,7 @@
 // api/dao/notificacoes.dao.js
 
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs, query, where } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, query, where } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB6D-EiO-Bi6wb7fePa-FLnIE3NqY62BjM',
