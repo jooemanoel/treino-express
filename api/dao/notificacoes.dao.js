@@ -29,3 +29,20 @@ export const listar = async () => {
   const snapshot = await getDocs(colecao);
   return snapshot.docs.map((doc) => doc.data());
 };
+
+export const remover = async (subscription) => {
+  // Busca os docs com o mesmo endpoint da subscription
+  const q = query(colecao, where('endpoint', '==', subscription.endpoint));
+  const snapshot = await getDocs(q);
+
+  if (snapshot.empty) {
+    console.log('Nenhuma inscrição encontrada para remover.');
+    return;
+  }
+
+  // Normalmente, só deve ter um, mas vamos garantir removendo todos encontrados
+  const promises = snapshot.docs.map(docSnapshot => deleteDoc(doc(db, 'subscricoes', docSnapshot.id)));
+  await Promise.all(promises);
+
+  console.log(`Removidas ${snapshot.docs.length} inscrição(ões) com endpoint: ${subscription.endpoint}`);
+};
