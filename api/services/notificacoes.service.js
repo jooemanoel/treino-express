@@ -20,6 +20,10 @@ export const salvarInscricao = async (subscription) => {
 };
 
 export const enviarParaTodos = async (payload) => {
+  console.log('Enviando notificações para todos os inscritos...', JSON.stringify(payload));
+  if (!payload || !payload.title || !payload.body) {
+    throw new Error('Payload inválido. Deve conter title e body.');
+  }
   const subscricoes = await notificacoesDAO.listar();
 
   const notificacoes = subscricoes.map((sub) =>
