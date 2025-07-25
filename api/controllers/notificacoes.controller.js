@@ -15,9 +15,9 @@ export const inscrever = async (req, res) => {
 
 export const enviarNotificacoes = async (req, res) => {
   console.log('Requisição para enviar notificações recebida:', req.body);
-  const { titulo, corpo } = req.body;
+  const { title, body } = req.body;
   try {
-    await notificacoesService.enviarParaTodos({ title: titulo, body: corpo });
+    await notificacoesService.enviarParaTodos({ title, body });
     res.json({ mensagem: 'Notificações enviadas.' });
   } catch (err) {
     console.error('Erro ao enviar notificações:', err);
